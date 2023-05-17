@@ -1,10 +1,11 @@
 const express = require("express");
-const {homepage, contact, register} = require("../controller/controller");
+const {homepage, register, getAllUsers, getSingleUser} = require("../controller/controller");
 const router = express.Router();
 
 router.route("/").get(homepage);
-router.route("/contact").get(contact);
+router.route("/users").get(getAllUsers);
 router.route("/register").post(register);
+router.route("/user/:user").get(getSingleUser);
 
 
 module.exports = router;

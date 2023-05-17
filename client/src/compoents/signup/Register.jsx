@@ -10,25 +10,9 @@ const Register = () => {
     const handleUserDetails = async(e)=>{
         const {value, name} = e.target;
         setUserDetails((prevDetails)=>{
-            if(name === "username"){
-                return{
-                    username:value,
-                    email:prevDetails.email,
-                    password: prevDetails.password
-                }
-            }else if (name === "password"){
-                return{
-                    username: prevDetails.username,
-                    password: value,
-                    email: prevDetails.email
-                }
-            }
-            else if (name === "email"){
-                return{
-                    username: prevDetails.username,
-                    password: prevDetails.password,
-                    email: value,
-                }
+            return{
+                ...prevDetails,
+                [name]: value,
             }
         })
     }
