@@ -1,5 +1,5 @@
 require("dotenv").config()
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 const pass = process.env.pass
 
 const MONGO_URI = `mongodb+srv://Toshbaba:${pass}@tosh.e022gw2.mongodb.net/backendtutorial?retryWrites=true&w=majority`
